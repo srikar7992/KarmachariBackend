@@ -1,20 +1,23 @@
 ﻿using LoggerImplementation;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace GlobalHelpers;
 
 public class EncryptionHelper
 {
+    #region Private Members
+
     private protected readonly byte[] privateKey;
     private protected readonly byte[] publicKey;
     private protected readonly byte[] secondarySalt;
     private protected readonly LoggerImplementation.ILogger logger;
+
+    #endregion
+
+    #region Constructor
+
     /// <summary>
     /// Initializes a new instance of the EncryptionHelper class.
     /// </summary>
@@ -27,6 +30,10 @@ public class EncryptionHelper
         secondarySalt = GenerateRandomSalt();
     }
 
+    #endregion
+
+    #region Public Methods
+
     /// <summary>
     /// Encrypts the specified plain text using the private key and a randomly generated secondary salt.
     /// </summary>
@@ -36,7 +43,6 @@ public class EncryptionHelper
     {
         return EncryptText(plainText, usePrivateKey);
     }
-
 
     /// <summary>
     /// Decrypts the specified cipher text using the private key or the public key.
@@ -48,6 +54,10 @@ public class EncryptionHelper
     {
         return DecryptText(cipherText, usePrivateKey);
     }
+
+    #endregion
+
+    #region Private Methods
 
     private protected static byte[] GenerateRandomSalt()
     {
@@ -74,20 +84,18 @@ public class EncryptionHelper
                 byte[] iv = aesAlg.IV;
                 byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
 
-                using (ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, iv))
-                using (MemoryStream msEncrypt = new MemoryStream())
+                using ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, iv);
+                using MemoryStream msEncrypt = new();
+                msEncrypt.Write(iv, 0, iv.Length);
+                msEncrypt.Write(secondarySalt, 0, secondarySalt.Length);
+
+                using (CryptoStream csEncrypt = new(msEncrypt, encryptor, CryptoStreamMode.Write))
                 {
-                    msEncrypt.Write(iv, 0, iv.Length);
-                    msEncrypt.Write(secondarySalt, 0, secondarySalt.Length);
-
-                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
-                    {
-                        csEncrypt.Write(plainTextBytes, 0, plainTextBytes.Length);
-                        csEncrypt.FlushFinalBlock();
-                    }
-
-                    encryptedBytes = msEncrypt.ToArray();
+                    csEncrypt.Write(plainTextBytes, 0, plainTextBytes.Length);
+                    csEncrypt.FlushFinalBlock();
                 }
+
+                encryptedBytes = msEncrypt.ToArray();
             }
 
             return Convert.ToBase64String(encryptedBytes);
@@ -128,4 +136,6 @@ public class EncryptionHelper
             return string.Empty;
         }
     }
+
+    #endregion
 }
