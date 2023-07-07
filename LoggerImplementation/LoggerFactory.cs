@@ -24,13 +24,16 @@ public class LoggerFactory : ILogger
         _configuration = configuration;
         var loggingSettings = _configuration.GetSection("LoggerType").Value;
         _ = Enum.TryParse(loggingSettings, out LoggerType loggerType);
+        var writePath = _configuration.GetSection("Serilog:WriteTo")
+            .GetSection("File")
+            .GetValue<string>("Args:path")?? "/logs/log-.txt";
         switch (loggerType)
         {
             case LoggerType.NLog:
                 _logger = new NLogLogger();
                 break;
             case LoggerType.Serilog:
-                _logger = new SerilogLogger();
+                _logger = new SerilogLogger(writePath);
                 break;
             case LoggerType.Log4Net:
                 break;

@@ -10,9 +10,12 @@ public class SerilogLogger : ILogger
 {
     private readonly Serilog.ILogger _logger;
 
-    public SerilogLogger()
+    public SerilogLogger(string path)
     {
-        _logger = new LoggerConfiguration().CreateLogger();
+        _logger = new LoggerConfiguration()
+            .WriteTo.Console()
+            .WriteTo.File(path, rollingInterval: RollingInterval.Day)
+            .CreateLogger();
     }
 
     public void LogInformation(string message)
