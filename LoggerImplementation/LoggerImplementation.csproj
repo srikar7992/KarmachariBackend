@@ -13,4 +13,12 @@
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\srikar\Desktop\Projects\KarmachariBackend\LoggerImplementation\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\srikar\Desktop\Projects\KarmachariBackend\LoggerImplementation\.editorconfig" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
 ﻿using NLog;
+using NLog.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,9 @@ public class NLogLogger : ILogger
 
     public NLogLogger()
     {
-        _logger = LogManager.GetCurrentClassLogger();
+        _logger = LogManager.Setup()
+            .LoadConfigurationFromAppSettings()
+            .GetCurrentClassLogger();
     }
 
     public void LogInformation(string message)
