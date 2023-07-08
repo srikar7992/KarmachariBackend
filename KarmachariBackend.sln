@@ -49,6 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08-Logging", "08-Logging", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerImplementation", "LoggerImplementation\LoggerImplementation.csproj", "{BCA23588-7157-4AD0-9FFC-54D85B643E25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelMappers", "ModelMappers\ModelMappers.csproj", "{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonEntities", "CommonEntities\CommonEntities.csproj", "{56CB413E-E478-4596-A5E8-082F00C5C28C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +103,14 @@ Global
 		{BCA23588-7157-4AD0-9FFC-54D85B643E25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCA23588-7157-4AD0-9FFC-54D85B643E25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCA23588-7157-4AD0-9FFC-54D85B643E25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56CB413E-E478-4596-A5E8-082F00C5C28C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56CB413E-E478-4596-A5E8-082F00C5C28C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56CB413E-E478-4596-A5E8-082F00C5C28C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56CB413E-E478-4596-A5E8-082F00C5C28C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,6 +131,8 @@ Global
 		{357AB7D5-6D1E-4E0E-B8E4-D2BBCB72069C} = {46AF8B28-99EE-4836-A6FD-5AF2C18719DC}
 		{A1E7076A-8D6D-45BA-86C4-E5B898C60618} = {86416A7E-054A-4917-80C1-F98D67B852E1}
 		{BCA23588-7157-4AD0-9FFC-54D85B643E25} = {938A4BCA-710A-4372-9695-90B9AEF72B0A}
+		{4329A425-97DE-43A5-A1DA-F9A9D36CD72F} = {FD8F678A-EF19-4E19-AA32-C1BEE6072529}
+		{56CB413E-E478-4596-A5E8-082F00C5C28C} = {FD8F678A-EF19-4E19-AA32-C1BEE6072529}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C037C6DD-6F9D-4648-87FE-032991485DE9}

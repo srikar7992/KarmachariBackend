@@ -1,4 +1,6 @@
+using AutoMapper;
 using LoggerImplementation;
+using ModelMappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<LoggerImplementation.ILogger, LoggerImplementation.LoggerFactory>();
+
+// Auto Mapper Configurations
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new MappingProfile());
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 
