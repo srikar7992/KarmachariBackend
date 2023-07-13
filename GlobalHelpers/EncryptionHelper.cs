@@ -62,7 +62,7 @@ public class EncryptionHelper
     private protected static byte[] GenerateRandomSalt()
     {
         byte[] salt = new byte[32];
-        using (var rng = new RNGCryptoServiceProvider())
+        using (var rng = RandomNumberGenerator.Create())
         {
             rng.GetBytes(salt);
         }

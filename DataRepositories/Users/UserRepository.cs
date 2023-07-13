@@ -1,12 +1,13 @@
-﻿using DataContracts;
-using DataEntityModels;
+﻿using DataEntityModels;
+using EntityDbContext;
+using Karmchari.Data.Contracts;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataRepositories;
+namespace Karmchari.Data.Repositories;
 
-public class UserRepository : BaseDataRepository<User>, IUserDataContract
+public class UserRepository : DataRepositoryBase<User>, IUserDataContract
 {
-    public UserRepository(DbContext context) : base(context)
+    public UserRepository(KarmachariDbContext context) : base(context)
     {
     }
 }

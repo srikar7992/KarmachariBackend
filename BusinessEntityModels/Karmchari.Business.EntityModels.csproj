@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bridge\Bridge.csproj" />
-    <ProjectReference Include="..\BusinessContracts\BusinessContracts.csproj" />
+    <PackageReference Include="NUlid" Version="1.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommonEntities\CommonEntities.csproj" />
   </ItemGroup>
 
 </Project>

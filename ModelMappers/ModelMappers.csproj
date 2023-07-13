@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BusinessEntityModels\BusinessEntityModels.csproj" />
-    <ProjectReference Include="..\DataEntityModels\DataEntityModels.csproj" />
+    <ProjectReference Include="..\BusinessEntityModels\Karmchari.Business.EntityModels.csproj" />
+    <ProjectReference Include="..\DataEntityModels\Karmchari.Data.EntityModels.csproj" />
   </ItemGroup>
 
 </Project>

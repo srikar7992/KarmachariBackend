@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using NUlid;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataEntityModels;
 
 [Table("users")]
 public class User : DataEntityBase
 {
+    [Column("UserId")]
+    public string UserId { get; set; } = Ulid.NewUlid().ToString();
+
     [Column("firstname")]
     [RegularExpression(@"^[A-Za-z]{1,25}$", ErrorMessage = "Only A-Z and a-z characters allowed with a maximum length of 25.")]
     public required string FirstName { get; set; }

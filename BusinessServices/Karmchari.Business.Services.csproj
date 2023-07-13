@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DataContracts\DataContracts.csproj" />
+    <ProjectReference Include="..\Bridge\Bridge.csproj" />
+    <ProjectReference Include="..\BusinessContracts\Karmachari.Business.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

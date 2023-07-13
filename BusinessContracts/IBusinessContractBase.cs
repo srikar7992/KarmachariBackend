@@ -5,9 +5,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessContracts;
+namespace Karmachari.Business.Contracts;
 
-public interface IBaseBusinessContract<TModel>
+public interface IBusinessContractBase<TModel>
 {
     IEnumerable<TModel> GetAll();
     IQueryable<TModel> Find(Expression<Func<TModel, bool>> predicate);

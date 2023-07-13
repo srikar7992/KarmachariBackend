@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KarmachariApi", "KarmachariApi\KarmachariApi.csproj", "{973B8114-C1EF-4130-9FE2-5D095BF7816F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03-Bridge", "03-Bridge", "{F51458D6-AE33-4399-B36B-6A63DF8AF30B}"
+	ProjectSection(SolutionItems) = preProject
+		BusinessServices\BusinessServiceBase.cs = BusinessServices\BusinessServiceBase.cs
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bridge", "Bridge\Bridge.csproj", "{D11F60D8-BBE9-484D-A35F-90C877A94669}"
 EndProject
@@ -17,9 +20,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Api", "01-Api", "{A7C850CE-1C07-486C-BE42-638AF3B6F0B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessContracts", "BusinessContracts\BusinessContracts.csproj", "{4FA6F797-C37B-4E1E-82D3-6D9F3CF31A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karmachari.Business.Contracts", "BusinessContracts\Karmachari.Business.Contracts.csproj", "{4FA6F797-C37B-4E1E-82D3-6D9F3CF31A97}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessServices", "BusinessServices\BusinessServices.csproj", "{D1BC8612-CFDC-42CD-9628-BAF650B41BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karmchari.Business.Services", "BusinessServices\Karmchari.Business.Services.csproj", "{D1BC8612-CFDC-42CD-9628-BAF650B41BA9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-DataAccessLayer", "04-DataAccessLayer", "{4FE044BD-AA90-4C81-814D-A2CAD917DA99}"
 EndProject
@@ -27,15 +30,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Contracts", "Contracts", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{E86B60A0-C925-462A-87D8-80F4FE9CA8CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataContracts", "DataContracts\DataContracts.csproj", "{491FB158-0D1F-44DE-B3C3-F3D2BE58E562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karmchari.Data.Contracts", "DataContracts\Karmchari.Data.Contracts.csproj", "{491FB158-0D1F-44DE-B3C3-F3D2BE58E562}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataRepositories", "DataRepositories\DataRepositories.csproj", "{059FEF52-22FF-4192-A8DB-825EBD3BF8B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karmchari.Data.Repositories", "DataRepositories\Karmchari.Data.Repositories.csproj", "{059FEF52-22FF-4192-A8DB-825EBD3BF8B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05-EntityModels", "05-EntityModels", "{FD8F678A-EF19-4E19-AA32-C1BEE6072529}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessEntityModels", "BusinessEntityModels\BusinessEntityModels.csproj", "{5DF269B5-945A-48BE-90BB-7F5F2AC9133B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karmchari.Business.EntityModels", "BusinessEntityModels\Karmchari.Business.EntityModels.csproj", "{5DF269B5-945A-48BE-90BB-7F5F2AC9133B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataEntityModels", "DataEntityModels\DataEntityModels.csproj", "{60FA759D-522C-4DB3-B0B5-3E3B8CBD64A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Karmchari.Data.EntityModels", "DataEntityModels\Karmchari.Data.EntityModels.csproj", "{60FA759D-522C-4DB3-B0B5-3E3B8CBD64A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06-GlobalHelpers", "06-GlobalHelpers", "{46AF8B28-99EE-4836-A6FD-5AF2C18719DC}"
 EndProject
@@ -47,11 +50,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityDbContext", "EntityDb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08-Logging", "08-Logging", "{938A4BCA-710A-4372-9695-90B9AEF72B0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerImplementation", "LoggerImplementation\LoggerImplementation.csproj", "{BCA23588-7157-4AD0-9FFC-54D85B643E25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggerImplementation", "LoggerImplementation\LoggerImplementation.csproj", "{BCA23588-7157-4AD0-9FFC-54D85B643E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelMappers", "ModelMappers\ModelMappers.csproj", "{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelMappers", "ModelMappers\ModelMappers.csproj", "{4329A425-97DE-43A5-A1DA-F9A9D36CD72F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonEntities", "CommonEntities\CommonEntities.csproj", "{56CB413E-E478-4596-A5E8-082F00C5C28C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonEntities", "CommonEntities\CommonEntities.csproj", "{56CB413E-E478-4596-A5E8-082F00C5C28C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

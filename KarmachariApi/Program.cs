@@ -1,4 +1,12 @@
 using AutoMapper;
+using Bridge;
+using EntityDbContext;
+using Karmachari.Business.Contracts;
+using Karmachari.Business.Contracts.Users;
+using Karmchari.Business.Services;
+using Karmchari.Business.Services.Users;
+using Karmchari.Data.Contracts;
+using Karmchari.Data.Repositories;
 using LoggerImplementation;
 using ModelMappers;
 
@@ -11,6 +19,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<LoggerImplementation.ILogger, LoggerImplementation.LoggerFactory>();
+builder.Services.AddDbContext<KarmachariDbContext>();
+builder.Services.AddScoped<IUserBusinessContract, UserServices>();
+builder.Services.AddScoped<IUserDataContract, UserRepository>();
+builder.Services.AddScoped<UsersClient>();
 
 // Auto Mapper Configurations
 var mapperConfig = new MapperConfiguration(mc =>

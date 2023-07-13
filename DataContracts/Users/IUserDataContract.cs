@@ -1,13 +1,7 @@
 ﻿using DataEntityModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+namespace Karmchari.Data.Contracts;
 
-namespace DataContracts;
-
-public interface IUserDataContract : IBaseDataContract<User>
+public interface IUserDataContract : IDataContractBase<User>
 {
     //Add custom methods
 }

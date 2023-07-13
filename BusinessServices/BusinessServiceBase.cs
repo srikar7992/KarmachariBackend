@@ -1,5 +1,5 @@
 ﻿using Bridge;
-using BusinessContracts;
+using Karmachari.Business.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessServices;
+namespace Karmchari.Business.Services;
 
-public class BusinessServiceBase<TModel, TEntity> : IBaseBusinessContract<TModel>
+public class BusinessServiceBase<TModel, TEntity> : IBusinessContractBase<TModel>
     where TModel : class
     where TEntity : class
 {

@@ -11,10 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BusinessEntityModels\BusinessEntityModels.csproj" />
-    <ProjectReference Include="..\DataContracts\DataContracts.csproj" />
-    <ProjectReference Include="..\DataEntityModels\DataEntityModels.csproj" />
-    <ProjectReference Include="..\DataRepositories\DataRepositories.csproj" />
+    <ProjectReference Include="..\BusinessEntityModels\Karmchari.Business.EntityModels.csproj" />
+    <ProjectReference Include="..\DataContracts\Karmchari.Data.Contracts.csproj" />
+    <ProjectReference Include="..\DataEntityModels\Karmchari.Data.EntityModels.csproj" />
+    <ProjectReference Include="..\DataRepositories\Karmchari.Data.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

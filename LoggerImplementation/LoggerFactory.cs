@@ -6,7 +6,7 @@ public class LoggerFactory : ILogger
 {
     private readonly IConfiguration _configuration;
 
-    private protected readonly ILogger _logger;
+    private protected readonly ILogger? _logger;
 
     public LoggerFactory(IConfiguration configuration)
     {
@@ -33,16 +33,16 @@ public class LoggerFactory : ILogger
 
     public void LogError(Exception ex, string message)
     {
-        _logger.LogError(ex, message);
+        _logger?.LogError(ex, message);
     }
 
     public void LogInformation(string message)
     {
-        _logger.LogInformation(message);
+        _logger?.LogInformation(message);
     }
 
     public void LogWarning(string message)
     {
-        _logger.LogWarning(message);
+        _logger?.LogWarning(message);
     }
 }

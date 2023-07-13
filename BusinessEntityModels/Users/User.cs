@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUlid;
 
 namespace BusinessEntityModels;
 
-public class User
+public class User : BusinessEntityBase
 {
+    public string UserId { get; set; } = Ulid.NewUlid().ToString();
     public required string FirstName { get; set; }
     public string? LastName { get; set; }
     public required string UserName { get; set; }

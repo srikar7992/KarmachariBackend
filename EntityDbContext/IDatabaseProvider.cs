@@ -4,5 +4,5 @@ namespace EntityDbContext;
 
 public interface IDatabaseProvider
 {
-    void Configure(DbContextOptionsBuilder optionsBuilder, string connectionString);
+    void Configure(DbContextOptionsBuilder optionsBuilder);
 }

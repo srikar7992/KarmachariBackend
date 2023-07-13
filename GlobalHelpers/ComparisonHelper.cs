@@ -12,7 +12,7 @@ public static class ComparisonHelper
     /// <param name="obj2">The second object to compare.</param>
     /// <param name="propertiesToSkip">An optional list of properties to skip during the comparison.</param>
     /// <returns>True if the objects are equal, false otherwise.</returns>
-    public static bool CompareObjects<T>(T obj1, T obj2, IEnumerable<string> propertiesToSkip = null)
+    public static bool CompareObjects<T>(T obj1, T obj2, IEnumerable<string>? propertiesToSkip = null)
     {
         try
         {
@@ -37,8 +37,8 @@ public static class ComparisonHelper
                     continue;
 
                 // Get the values of the properties for obj1 and obj2
-                object value1 = property.GetValue(obj1);
-                object value2 = property.GetValue(obj2);
+                object? value1 = property.GetValue(obj1);
+                object? value2 = property.GetValue(obj2);
 
                 // If the values are null, continue to the next property
                 if (ReferenceEquals(value1, value2))
@@ -53,6 +53,7 @@ public static class ComparisonHelper
 
         catch (Exception Ex)
         {
+            Console.WriteLine(Ex.Message);
             return false;
         }
     }
